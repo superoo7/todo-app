@@ -5,27 +5,30 @@
         <q-input
           ref="textinput"
           @keydown.esc="setEditFalse"
+          @blur="setEditFalse"
           @keydown.enter="onEnter"
-          class="col-10"
+          class="col-xs-8 col-md-10"
           filled
           v-model="inputText"
           autofocus
         />
-        <q-btn class="col-2" @click="onEnter">Submit</q-btn>
+        <q-btn class="col-xs-4 col-md-2 flex-center" @click="onEnter"
+          >Submit</q-btn
+        >
       </div>
     </q-item>
     <q-item clickable class="items-center" v-else>
       <div class="full-width row flex items-center">
-        <div class="col-1">
+        <div class="col-xs-2 col-md-1">
           <q-checkbox v-model="checkbox" />
         </div>
         <span
           :style="done && 'text-decoration: line-through'"
           @click="setEditTrue"
-          class="col-10"
+          class="col-xs-8 col-md-10"
           >{{ description }}</span
         >
-        <q-btn class="col-1 bg-red" @click="deleteTodo">
+        <q-btn class="col-xs-2 col-md-1 bg-red flex-center" @click="deleteTodo">
           <q-icon color="white" name="delete"></q-icon>
         </q-btn>
       </div>
