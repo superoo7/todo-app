@@ -1,5 +1,9 @@
 # Quasar App
 
+Simple ToDo App build with Quasar Framework for SPA, PWA, SSR, Android, iOS, MacOS, Linux and Windows.
+
+Back end written in Express, TypeScript, Node.js
+
 ## Requirement
 - Node.js > v8.9.0
 - Yarn installed
