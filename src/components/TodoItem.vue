@@ -93,3 +93,28 @@ export default {
 </script>
 
 <style></style>
+
+<test lang="jest">
+// SAMPLE OF QUASAR TESTING
+
+// import TodoItem from "../TodoItem.vue";
+// import { mount } from "@vue/test-utils";
+
+// describe("TodoItem", () => {
+//   let comp;
+
+//   beforeAll(() => {
+//     comp = mount(TodoItem, {
+//       propsData: {
+//         uid: 1,
+//         description: "one",
+//         done: false
+//       }
+//     });
+//   })
+    
+//   it("snapshot test", () => {
+//     expect(comp.html()).toMatchSnapshot();
+//   })
+// })
+</test>

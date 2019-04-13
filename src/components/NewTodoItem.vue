@@ -27,18 +27,17 @@ export default {
     };
   },
   methods: {
-    submit() {
+    async submit() {
       if (this.value === "") {
         this.errorMessage = "No data entered";
         return;
       }
-      this.addTodo({
+      await this.addTodo({
         description: this.value,
         done: false
-      }).then(() => {
-        this.errorMessage = "";
-        this.value = "";
       });
+      this.errorMessage = "";
+      this.value = "";
     },
     addTodo(todo) {
       return this.$store.dispatch("todo/serverAddTodo", todo);

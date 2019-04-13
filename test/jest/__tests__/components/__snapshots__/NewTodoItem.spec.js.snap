@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewTodoItem snapshot testing 1`] = `
+<div class="q-item q-item-type row no-wrap column">
+  <!---->
+  <div class="full-width row">
+    <div class="q-field row no-wrap items-start col-xs-8 col-md-10 q-input q-field--filled">
+      <div class="q-field__inner relative-position col self-stretch column justify-center">
+        <div tabindex="-1" class="q-field__control relative-position row no-wrap">
+          <div class="q-field__control-container col relative-position row no-wrap q-anchor--skip"><input tabindex="0" type="text" class="q-field__native"></div>
+        </div>
+      </div>
+    </div> <button tabindex="0" type="button" class="q-btn inline q-btn-item non-selectable col-xs-4 col-md-2 flex-center q-btn--standard q-btn--rectangle q-focusable q-hoverable">
+      <div tabindex="-1" class="q-focus-helper"></div>
+      <div class="q-btn__content text-center col items-center q-anchor--skip justify-center row">Submit</div>
+    </button>
+  </div>
+</div>
+`;
