@@ -6,7 +6,7 @@
 import { mount, createLocalVue, shallowMount } from "@vue/test-utils";
 import * as All from "quasar";
 import Vuex from "vuex";
-import NewTodoItem from "~/src/components/NewTodoItem.vue";
+import TodoItem from "~/src/components/TodoItem.vue";
 const { Quasar } = All;
 
 const components = Object.keys(All).reduce((object, key) => {
@@ -17,7 +17,7 @@ const components = Object.keys(All).reduce((object, key) => {
   return object;
 }, {});
 
-describe("NewTodoItem", () => {
+describe("TodoItem", () => {
   const localVue = createLocalVue();
   localVue.use(Quasar, { components });
   localVue.use(Vuex);
@@ -26,13 +26,19 @@ describe("NewTodoItem", () => {
   let mutations;
   let wrapper;
   let actions;
+  const todo = {
+    uid: 0,
+    description: "zero",
+    done: false
+  };
 
   beforeAll(() => {
     mutations = {
       MUTATION: jest.fn()
     };
     actions = {
-      serverAddTodo: jest.fn()
+      serverEditTodo: jest.fn(),
+      serverDeleteTodo: jest.fn()
     };
     store = new Vuex.Store({
       modules: {
@@ -44,9 +50,10 @@ describe("NewTodoItem", () => {
         }
       }
     });
-    wrapper = mount(NewTodoItem, {
+    wrapper = mount(TodoItem, {
       store,
-      localVue
+      localVue,
+      propsData: todo
     });
   });
 
@@ -54,23 +61,11 @@ describe("NewTodoItem", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("submit method should fail if value is empty", () => {
+  it("setEdit change editMode properly", () => {
     const { vm } = wrapper;
-    vm.value = "";
-    vm.submit();
-    expect(vm.errorMessage).toEqual("No data entered");
-  });
-
-  it("submit successfully when there is value", async () => {
-    const { vm } = wrapper;
-    const description = "asdqwe";
-    vm.value = description;
-    await vm.submit();
-    expect(actions.serverAddTodo.mock.calls).toHaveLength(1);
-    expect(actions.serverAddTodo.mock.calls[0][1]).toEqual({
-      description,
-      done: false
-    });
-    expect(vm.value).toEqual("");
+    vm.setEditTrue();
+    expect(vm.editMode).toEqual(true);
+    vm.setEditFalse();
+    expect(vm.editMode).toEqual(false);
   });
 });

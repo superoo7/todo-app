@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem snapshot testing 1`] = `
+<div>
+  <div tabindex="0" class="q-item q-item-type row no-wrap items-center q-item--clickable q-link cursor-pointer q-focusable q-hoverable">
+    <div tabindex="-1" class="q-focus-helper"></div>
+    <div class="full-width row flex items-center">
+      <div class="col-xs-2 col-md-1">
+        <div tabindex="0" class="q-checkbox cursor-pointer no-outline row inline no-wrap items-center">
+          <div class="q-checkbox__inner relative-position"><input type="checkbox" class="q-checkbox__native q-ma-none q-pa-none invisible">
+            <div class="q-checkbox__bg absolute"><svg viewBox="0 0 24 24" class="q-checkbox__check fit absolute-full">
+                <path fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+              </svg>
+              <div class="q-checkbox__check-indet absolute"></div>
+            </div>
+          </div>
+        </div>
+      </div> <span class="col-xs-8 col-md-10">zero</span> <button tabindex="0" type="button" class="q-btn inline q-btn-item non-selectable col-xs-2 col-md-1 bg-red flex-center q-btn--standard q-btn--rectangle q-focusable q-hoverable">
+        <div tabindex="-1" class="q-focus-helper"></div>
+        <div class="q-btn__content text-center col items-center q-anchor--skip justify-center row"><i aria-hidden="true" class="material-icons q-icon text-white">delete</i></div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

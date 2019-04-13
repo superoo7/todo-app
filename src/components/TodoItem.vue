@@ -52,10 +52,10 @@ export default {
   },
   methods: {
     editTodo(todo) {
-      this.$store.dispatch("todo/serverEditTodo", todo);
+      return this.$store.dispatch("todo/serverEditTodo", todo);
     },
     deleteTodo() {
-      this.$store.dispatch("todo/serverDeleteTodo", this.uid);
+      return this.$store.dispatch("todo/serverDeleteTodo", this.uid);
     },
     setEditTrue() {
       this.editMode = true;
@@ -63,8 +63,8 @@ export default {
     setEditFalse() {
       this.editMode = false;
     },
-    onEnter() {
-      this.editTodo({
+    async onEnter() {
+      await this.editTodo({
         uid: this.uid,
         description: this.inputText,
         done: this.done
@@ -93,28 +93,3 @@ export default {
 </script>
 
 <style></style>
-
-<test lang="jest">
-// SAMPLE OF QUASAR TESTING
-
-// import TodoItem from "../TodoItem.vue";
-// import { mount } from "@vue/test-utils";
-
-// describe("TodoItem", () => {
-//   let comp;
-
-//   beforeAll(() => {
-//     comp = mount(TodoItem, {
-//       propsData: {
-//         uid: 1,
-//         description: "one",
-//         done: false
-//       }
-//     });
-//   })
-    
-//   it("snapshot test", () => {
-//     expect(comp.html()).toMatchSnapshot();
-//   })
-// })
-</test>
