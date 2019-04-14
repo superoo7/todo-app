@@ -1,4 +1,7 @@
 todos.json
+test/jest/coverage
+test/cypress/videos
+test/cypress/screenshots
 
 .quasar
 .DS_Store

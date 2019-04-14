@@ -4,6 +4,8 @@ Simple ToDo App build with Quasar Framework for SPA, PWA, SSR, Android, iOS, Mac
 
 Back end written in Express, TypeScript, Node.js
 
+The app used network to store todo, and fallback to LocalStorage if network not exist.
+
 ## Requirement
 - Node.js > v8.9.0
 - Yarn installed
@@ -42,3 +44,12 @@ yarn test:unit:ui
 ```
 
 - End-to-End testing is available with Cypress
+
+```sh
+# Start server
+qusar dev --mode spa
+# Start Cypress (check once)
+yarn test:e2e:CI
+# Start Cypress (dev)
+yarn test:e2e
+```

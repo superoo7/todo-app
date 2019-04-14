@@ -1,13 +1,18 @@
-import * as ctx from  '../../../../quasar.conf.js'
+/* eslint-disable */
 
-describe('Landing', () => {
+import * as ctx from "../../../../quasar.conf.js";
+
+describe("Landing", () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit("/");
+  });
+  it(".should() - assert that <title> is correct", () => {
+    cy.title().should("include", "ToDo App");
+  });
+  it(".should() - assert that header is correct", () => {
+    cy.get("#q-app").find("div.q-item.q-item-type.row.no-wrap.flex-center > h1").contains("Todo")
   })
-  it('.should() - assert that <title> is correct', () => {
-    cy.title().should('include', 'Quasar')
-  })
-})
+});
 
 // describe('Home page tests', () => {
 //   beforeEach(() => {
