@@ -13,5 +13,5 @@ node_js:
 script:
   - yarn lint
   - yarn test:unit
-  - yarn test:e2e:CI
+  # - yarn test:e2e:CI # Remove e2e
   - quasar build -m pwa
