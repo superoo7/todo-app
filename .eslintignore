@@ -1,1 +1,7 @@
 /dist
+/src-cordova
+/src-electron
+/src-ssr
+/src-pwa
+/server
+/test
