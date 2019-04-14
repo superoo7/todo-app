@@ -7,6 +7,7 @@
   "author": "Lai Weng Han <jlwhoo7@gmail.com>",
   "private": true,
   "scripts": {
+    "build": "quasar build -m pwa",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"See package.json => scripts for available tests.\" && exit 0",
     "test:unit": "jest --updateSnapshot",

@@ -1,5 +1,7 @@
 # Quasar App
 
+[![Build Status](https://travis-ci.com/superoo7/todo-app.svg?branch=master)](https://travis-ci.com/superoo7/todo-app) [![Netlify Status](https://api.netlify.com/api/v1/badges/04108034-f0da-4616-94f0-5803467dd0c6/deploy-status)](https://app.netlify.com/sites/vigilant-lovelace-25a2cd/deploys)
+
 Simple ToDo App build with Quasar Framework for SPA, PWA, SSR, Android, iOS, MacOS, Linux and Windows.
 
 Back end written in Express, TypeScript, Node.js
