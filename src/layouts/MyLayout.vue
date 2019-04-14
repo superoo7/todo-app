@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated :style="isIphoneX ? 'padding-top:25px;' : ''">
       <q-toolbar>
         <q-btn
           flat
@@ -110,10 +110,20 @@ export default {
       leftDrawerOpen: this.$q.platform.is.desktop
     };
   },
+  computed: {
+    isIphoneX: function() {
+      const d = window.device || { model: "" };
+      return (
+        d.model === "x86_64" ||
+        d.model === "iPhone10,3" ||
+        d.model === "iPhone10,3"
+      );
+    }
+  },
   methods: {
     openURL
   }
 };
 </script>
 
-<style></style>
+<style lang="stylus" scoped></style>
