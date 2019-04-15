@@ -18,18 +18,22 @@ export async function serverAddTodo({ commit }, todo) {
   } catch (_err) {
     const todosStorage = LocalStorage.getItem(STORAGE_NAME);
     let todos;
+    let uid;
     try {
       const parsedTodo = JSON.parse(todosStorage);
+      if (!parsedTodo) throw new Error();
+      uid = parsedTodo.todos.length;
       todos = {
-        todos: [...parsedTodo.todos, { ...todo, uid: parsedTodo.todos.length }]
+        todos: [...parsedTodo.todos, { ...todo, uid }]
       };
     } catch (err) {
-      todos = { todos: [{ ...todo, uid: 0 }] };
+      uid = 0;
+      todos = { todos: [{ ...todo, uid }] };
     }
     LocalStorage.set(STORAGE_NAME, JSON.stringify(todos));
     data = {
       success: true,
-      todos
+      uid
     };
   }
 
@@ -121,11 +125,12 @@ export async function serverGetAllTodos({ commit }) {
     let todos;
     try {
       const parsedTodo = JSON.parse(todosStorage);
+      if (!parsedTodo) throw new Error();
       todos = parsedTodo;
     } catch (err) {
       todos = { todos: [] };
     }
-    LocalStorage.set(STORAGE_NAME, JSON.stringify(todos));
+    console.log(todos);
     data = todos;
   }
   commit("setAllTodo", data.todos);
